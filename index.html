@@ -15,10 +15,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #fff;
             overflow-x: hidden;
+            background: #000;
         }
 
-        /* Video Background */
-        .video-bg {
+        /* Ganti video dengan GIF animasi hutan (lebih aman untuk HP) */
+        .bg-gif {
             position: fixed;
             top: 0;
             left: 0;
@@ -28,60 +29,52 @@
             z-index: -1;
         }
 
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-        }
-
         header {
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
         }
 
         h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
             color: #fff;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 10px;
         }
 
         .product-info {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             color: #333;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
         .product-info h2 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
         .product-info p {
-            line-height: 1.6;
-            margin-bottom: 10px;
+            line-height: 1.4;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
         }
 
         .contact {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             color: #333;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 40px;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
             text-align: center;
         }
 
@@ -89,56 +82,80 @@
             color: #27ae60;
             text-decoration: none;
             font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
+            display: block;
+            margin-top: 5px;
+            font-size: 1.1rem;
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .gallery-item {
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .gallery img {
             width: 100%;
             display: block;
+            height: 150px;
+            object-fit: cover;
         }
 
         .gallery-caption {
-            padding: 10px;
+            padding: 8px;
             text-align: center;
             background: rgba(0, 0, 0, 0.7);
             color: white;
+            font-size: 0.8rem;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             background: rgba(0, 0, 0, 0.7);
-            margin-top: 40px;
+            margin-top: 20px;
+            font-size: 0.8rem;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5rem;
+        /* Tombol WhatsApp besar & mudah diklik di HP */
+        .whatsapp-btn {
+            display: block;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 15px auto;
+            text-align: center;
+            width: 80%;
+            max-width: 300px;
+            font-size: 1.1rem;
+        }
+
+        @media (min-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
-            .container {
-                padding: 10px;
+            .gallery img {
+                height: 200px;
             }
-            .product-info, .contact {
+            .product-info {
+                padding: 20px;
+            }
+            .contact {
                 padding: 20px;
             }
         }
@@ -146,12 +163,8 @@
 </head>
 <body>
 
-    <!-- Video Background -->
-    <video autoplay muted loop class="video-bg">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-green-forest-with-sun-rays-4067-large.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-    </video>
-    <div class="overlay"></div>
+    <!-- Ganti video dengan GIF animasi hutan (kompatibel 100% di HP) -->
+    <img src="https://media.tenor.com/7qoXx5VZcKIAAAAC/forest-green.gif" class="bg-gif" alt="Background Hutan">
 
     <header>
         <h1>🗑️ Tong Sampah Modern & Ramah Lingkungan</h1>
@@ -172,41 +185,30 @@
         <div class="gallery">
             <div class="gallery-item">
                 <img src="1000249249.jpg" alt="Tong Sampah 1">
-                <div class="gallery-caption">
-                    <p>Harga: Rp 2.000.000</p>
-                </div>
+                <div class="gallery-caption">Harga: Rp 2.000.000</div>
             </div>
             <div class="gallery-item">
                 <img src="1000249228.jpg" alt="Tong Sampah 2">
-                <div class="gallery-caption">
-                    <p>Harga: Rp 2.000.000</p>
-                </div>
+                <div class="gallery-caption">Harga: Rp 2.000.000</div>
             </div>
             <div class="gallery-item">
                 <img src="1000249240.jpg" alt="Tong Sampah 3">
-                <div class="gallery-caption">
-                    <p>Harga: Rp 2.000.000</p>
-                </div>
+                <div class="gallery-caption">Harga: Rp 2.000.000</div>
             </div>
             <div class="gallery-item">
                 <img src="1000249231.jpg" alt="Tong Sampah 4">
-                <div class="gallery-caption">
-                    <p>Harga: Rp 2.000.000</p>
-                </div>
+                <div class="gallery-caption">Harga: Rp 2.000.000</div>
             </div>
             <div class="gallery-item">
                 <img src="1000249246.jpg" alt="Tong Sampah 5">
-                <div class="gallery-caption">
-                    <p>Harga: Rp 2.000.000</p>
-                </div>
+                <div class="gallery-caption">Harga: Rp 2.000.000</div>
             </div>
         </div>
 
         <div class="contact">
             <h2>📞 Hubungi Kami Sekarang!</h2>
             <p>Alamat: Desa Tarikolot, Kecamatan Citeureup, Kabupaten Bogor, Jawa Barat 16810</p>
-            <p>WhatsApp / Telepon: <a href="https://wa.me/6285779017820">0857-7901-7820</a></p>
-            <p>Klik nomor di atas untuk chat langsung via WhatsApp!</p>
+            <a href="https://wa.me/6285779017820" class="whatsapp-btn">💬 Chat via WhatsApp</a>
         </div>
 
     </div>
